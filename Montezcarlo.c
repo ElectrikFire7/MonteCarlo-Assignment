@@ -41,7 +41,7 @@ int main()
         scanf("%d", &n);  	
 	}while (n <= 0);
   
-    pthread_create(&thread, NULL, &count, NULL);
+    pthread_create(&thread, NULL, count, NULL);
     pthread_join(thread, NULL);
     
     printf("\nIn main \nthread id = %lu\n", pthread_self());
