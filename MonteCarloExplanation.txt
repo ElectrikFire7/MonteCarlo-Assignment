@@ -8,7 +8,7 @@ int i; acts as a counter variable to run interations to produce 'n' points
 int n; stores the final number of points the user wants to use to calculate the value of pi
 int totalPts; to count and store the number of points inside the circle
 
-We define a function count()
+We define a function count(). It returns a void pointer, it is a way to signal pthread_join that child process has terminated.
 It uses the rand() function to generate random coordinates. We devide it by RAND_MAX. This produces value between 0 and 1.
 If the distnace of point from the origin < 1. totalpts increments.
 
