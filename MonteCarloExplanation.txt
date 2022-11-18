@@ -1,0 +1,22 @@
+Kishlay Singh
+201ME229
+CS252 Assignment
+Question 4.24
+
+GLOBAL VARIABLES
+int i; acts as a counter variable to run interations to produce 'n' points
+int n; stores the final number of points the user wants to use to calculate the value of pi
+int totalPts; to count and store the number of points inside the circle
+
+We define a function count()
+It uses the rand() function to generate random coordinates. We devide it by RAND_MAX. This produces value between 0 and 1.
+If the distnace of point from the origin < 1. totalpts increments.
+
+In the main function, we first use srand(time(NULL)) to create a seed for random numbers to be generated.
+pthread_t thread, creates a variable to store unsigned int value of thread identifier. Each thread
+Then we take input for n untill it is positive.
+Following this we call pthread_create(). We pass 'thread' so that we can store the data of thread created in it. Then we pass NULL in second attribute to set default attributes of new thread created to default.
+Since we don't have any specifications. We pass count function as third attribute, because we want the child thread to start executing there. The fourth attribuse is NULL as we don't expect a value to be entered from command line into argv[].
+Once pthread_create() runs, the new thread runs inside count. 
+pthread_join() waits for the child thread to finish executing and update data. It makes the parent thread wait. 
+The we run the algorithm to count for ratio of area of circle/square which is approximately pi/4.
